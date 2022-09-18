@@ -3,12 +3,12 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome } from '@expo/vector-icons';
+import { Entypo, Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { Button, ColorSchemeName, Pressable,View,Text } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -37,8 +37,25 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+    <Stack.Navigator screenOptions={{
+      headerStyle:{backgroundColor:Colors.light.tint},
+      headerTintColor:Colors.light.background,
+      headerTitleAlign:'left',
+      headerTitleStyle:{
+        fontWeight:'bold',
+      },
+      
+      }}>
+      <Stack.Screen name="Root" component={BottomTabNavigator} 
+      options={{title:"WhatsApp",headerRight: () => (
+        <View style={{flexDirection:'row',width:140,justifyContent:'space-between'}}>
+          <FontAwesome name="wifi" size={24} color="white" />
+          <Entypo name="light-up" size={24} color="white" />
+          {/* <Ionicons name="moon" size={24} color="white" /> */}
+          <Feather name="search" size={24} color="white" />
+          <Feather name="more-vertical" size={24} color="white" />
+        </View>
+      ),}} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
