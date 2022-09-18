@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { Button, ColorSchemeName, Pressable,View,Text } from 'react-native';
+import { Button, ColorSchemeName, Pressable,View,Text, Touchable, TouchableOpacity } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -36,6 +36,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+  const [moon,setMoon] = React.useState(true);
   return (
     <Stack.Navigator screenOptions={{
       headerStyle:{backgroundColor:Colors.light.tint},
@@ -50,8 +51,9 @@ function RootNavigator() {
       options={{title:"WhatsApp",headerRight: () => (
         <View style={{flexDirection:'row',width:140,justifyContent:'space-between'}}>
           <FontAwesome name="wifi" size={24} color="white" />
-          <Entypo name="light-up" size={24} color="white" />
-          {/* <Ionicons name="moon" size={24} color="white" /> */}
+          <TouchableOpacity onPress={()=>setMoon(!moon)}>
+            <Entypo name={moon === false? "light-up":"moon"} size={24} color="white" />
+          </TouchableOpacity>
           <Feather name="search" size={24} color="white" />
           <Feather name="more-vertical" size={24} color="white" />
         </View>
@@ -74,42 +76,7 @@ function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <BottomTab.Navigator
-      initialRouteName="TabOne"
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}>
-      <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
-      />
-      <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </BottomTab.Navigator>
+    <></>
   );
 }
 
