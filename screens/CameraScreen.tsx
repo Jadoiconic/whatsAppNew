@@ -2,11 +2,13 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { RootTabScreenProps } from '../types';
 
-export default function TabTwoScreen() {
+export default function CameraScreen({ navigation }: RootTabScreenProps<'Camera'>) {
   return (
     <View style={styles.container}>
       <EditScreenInfo />
+      <Text>Camera Screen</Text>
     </View>
   );
 }

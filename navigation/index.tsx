@@ -4,7 +4,7 @@
  *
  */
 import { Entypo, Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'; 
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
@@ -14,10 +14,14 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import TabOneScreen from '../screens/CameraScreen';
+import TabTwoScreen from '../screens/StatusScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import ChatScreen from '../screens/ChatScreen';
+import CameraScreen from '../screens/CameraScreen';
+import CallScreen from '../screens/CallScreen';
+import StatusScreen from '../screens/StatusScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -39,7 +43,9 @@ function RootNavigator() {
   const [moon,setMoon] = React.useState(true);
   return (
     <Stack.Navigator screenOptions={{
-      headerStyle:{backgroundColor:Colors.light.tint},
+      headerStyle:{
+        backgroundColor:Colors.light.tint,
+      },
       headerTintColor:Colors.light.background,
       headerTitleAlign:'left',
       headerTitleStyle:{
@@ -47,7 +53,7 @@ function RootNavigator() {
       },
       
       }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} 
+      <Stack.Screen name="Root" component={TopTabNavigator} 
       options={{title:"WhatsApp",headerRight: () => (
         <View style={{flexDirection:'row',width:140,justifyContent:'space-between'}}>
           <FontAwesome name="wifi" size={24} color="white" />
@@ -70,13 +76,26 @@ function RootNavigator() {
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const TopTab = createMaterialTopTabNavigator<RootTabParamList>();
 
-function BottomTabNavigator() {
+function TopTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <></>
+    <TopTab.Navigator 
+      initialRouteName='Chats'
+      tabBarOptions={{
+        activeTintColor: Colors.light.background,
+        style:{background: Colors.light.tint},
+        indicatorStyle:{backgroundColor: Colors.light.background,
+        height:5,}
+      }}>
+        <TopTab.Screen name="Camera" component={ CameraScreen } options={{tabBarIcon:()=><Feather name='camera' size={22} color='white'/>,
+      tabBarLabel:''}}/>
+        <TopTab.Screen name="Chats" component={ ChatScreen }/>
+        <TopTab.Screen name="Status" component={ StatusScreen }/>
+        <TopTab.Screen name="Calls" component={ CallScreen }/>
+    </TopTab.Navigator>
   );
 }
 
