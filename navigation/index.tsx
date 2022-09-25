@@ -14,8 +14,6 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/CameraScreen';
-import TabTwoScreen from '../screens/StatusScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import ChatScreen from '../screens/ChatScreen';
@@ -33,10 +31,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   );
 }
 
-/**
- * A root stack navigator is often used for displaying modals on top of all other content.
- * https://reactnavigation.org/docs/modal
- */
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
@@ -45,6 +40,14 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{
       headerStyle:{
         backgroundColor:Colors.light.tint,
+        elevetion:0,
+        shadowOpacity:0,
+        borderBottomWidth:0,
+        borderBottomHeight:0,
+      },
+      indicatorStyle:{
+        background: Colors.light.background,
+        height:4,
       },
       headerTintColor:Colors.light.background,
       headerTitleAlign:'left',
@@ -72,10 +75,7 @@ function RootNavigator() {
   );
 }
 
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
+
 const TopTab = createMaterialTopTabNavigator<RootTabParamList>();
 
 function TopTabNavigator() {
@@ -84,14 +84,10 @@ function TopTabNavigator() {
   return (
     <TopTab.Navigator 
       initialRouteName='Chats'
-      tabBarOptions={{
-        activeTintColor: Colors.light.background,
-        style:{background: Colors.light.tint},
-        indicatorStyle:{backgroundColor: Colors.light.background,
-        height:5,}
-      }}>
-        <TopTab.Screen name="Camera" component={ CameraScreen } options={{tabBarIcon:()=><Feather name='camera' size={22} color='white'/>,
-      tabBarLabel:''}}/>
+      screenOptions={{tabBarActiveTintColor:Colors.light.background,
+      tabBarStyle:{backgroundColor:Colors.light.tint}}}>
+        <TopTab.Screen name="Camera" component={ CameraScreen } options={{tabBarIcon:()=><Feather name='camera' size={22} color={Colors.light.background}/>,
+          tabBarLabel:()=>null}}/>
         <TopTab.Screen name="Chats" component={ ChatScreen }/>
         <TopTab.Screen name="Status" component={ StatusScreen }/>
         <TopTab.Screen name="Calls" component={ CallScreen }/>
@@ -99,9 +95,7 @@ function TopTabNavigator() {
   );
 }
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
+
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
