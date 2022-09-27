@@ -3,11 +3,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u2',
     name: 'Musocial',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg',
+    imageUri: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
   }],
   lastMessage: {
     id: 'm1',
@@ -19,11 +19,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u3',
     name: 'Amina',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg',
+    imageUri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
   }],
   lastMessage: {
     id: 'm2',
@@ -35,11 +35,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u4',
     name: 'John',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.png',
+    imageUri: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
   }],
   lastMessage: {
     id: 'm3',
@@ -51,11 +51,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u5',
     name: 'Gabriel',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg',
+    imageUri: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80',
   }],
   lastMessage: {
     id: 'm4',
@@ -67,7 +67,7 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u6',
     name: 'Gtan',
@@ -83,11 +83,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u7',
     name: 'Alice',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/6.png',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }],
   lastMessage: {
     id: 'm6',
@@ -99,11 +99,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u8',
     name: 'Theoneste',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/7.png',
+    imageUri: 'https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
   }],
   lastMessage: {
     id: 'm7',
@@ -115,11 +115,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u9',
     name: 'Mom',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/8.png',
+    imageUri: 'https://images.unsplash.com/photo-1474447976065-67d23accb1e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
   }],
   lastMessage: {
     id: 'm8',
@@ -131,11 +131,11 @@ export default [{
   users: [{
     id: 'u1',
     name: 'Mustapha',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
   }, {
     id: 'u10',
     name: 'Giramata Teckla',
-    imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/9.png',
+    imageUri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
   }],
   lastMessage: {
     id: 'm9',
