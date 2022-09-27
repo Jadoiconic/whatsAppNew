@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { Entypo, Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
+import { Entypo, Feather, FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'; 
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -36,18 +36,13 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   const [moon,setMoon] = React.useState(true);
+  const [offline,setOffline] = React.useState(false)
   return (
     <Stack.Navigator screenOptions={{
       headerStyle:{
         backgroundColor:Colors.light.tint,
-        elevetion:0,
-        shadowOpacity:0,
-        borderBottomWidth:0,
-        borderBottomHeight:0,
-      },
-      indicatorStyle:{
-        background: Colors.light.background,
-        height:4,
+        // elevetion:0,
+        // shadowOpacity:0,
       },
       headerTintColor:Colors.light.background,
       headerTitleAlign:'left',
@@ -59,7 +54,9 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={TopTabNavigator} 
       options={{title:"WhatsApp",headerRight: () => (
         <View style={{flexDirection:'row',width:140,justifyContent:'space-between'}}>
-          <FontAwesome name="wifi" size={24} color="white" />
+          <TouchableOpacity onPress={()=>setOffline(!offline)}>
+            <MaterialIcons name={offline === true? "wifi-off":"wifi"} size={24} color="white" />
+          </TouchableOpacity>
           <TouchableOpacity onPress={()=>setMoon(!moon)}>
             <Entypo name={moon === false? "light-up":"moon"} size={24} color="white" />
           </TouchableOpacity>
@@ -84,8 +81,12 @@ function TopTabNavigator() {
   return (
     <TopTab.Navigator 
       initialRouteName='Chats'
-      screenOptions={{tabBarActiveTintColor:Colors.light.background,
-      tabBarStyle:{backgroundColor:Colors.light.tint}}}>
+      screenOptions={{
+        tabBarActiveTintColor:Colors.light.background,
+        tabBarStyle:{backgroundColor:Colors.light.tint,},
+        tabBarIndicatorStyle:{backgroundColor:Colors.light.background,height:4,},
+        tabBarLabelStyle:{fontWeight:'bold',},
+        }}>
         <TopTab.Screen name="Camera" component={ CameraScreen } options={{tabBarIcon:()=><Feather name='camera' size={22} color={Colors.light.background}/>,
           tabBarLabel:()=>null}}/>
         <TopTab.Screen name="Chats" component={ ChatScreen }/>
