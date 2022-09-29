@@ -22,6 +22,8 @@ const styles = StyleSheet.create({
     lastMessage:{
         fontSize:16,
         color:'grey',
+        maxWidth:220,
+        // backgroundColor:'#128755',
     },
     midContainer:{
         justifyContent:'space-around',

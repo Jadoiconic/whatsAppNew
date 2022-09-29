@@ -59,7 +59,7 @@ export default [{
   }],
   lastMessage: {
     id: 'm4',
-    content: 'How do you feel coding..?',
+    content: 'How do you feel coding..? Do you think I am wrong about my stupid answers...?',
     createdAt: '2020-09-29T14:48:00.000Z',
   }
 }, {

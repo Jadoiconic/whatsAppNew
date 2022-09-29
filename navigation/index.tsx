@@ -3,12 +3,12 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { Entypo, Feather, FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Entypo, Feather, FontAwesome, FontAwesome5, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'; 
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { Button, ColorSchemeName, Pressable,View,Text, Touchable, TouchableOpacity } from 'react-native';
+import { Button, ColorSchemeName, Image,View,Text, Touchable, TouchableOpacity } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -20,6 +20,7 @@ import ChatScreen from '../screens/ChatScreen';
 import CameraScreen from '../screens/CameraScreen';
 import CallScreen from '../screens/CallScreen';
 import StatusScreen from '../screens/StatusScreen';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -64,6 +65,16 @@ function RootNavigator() {
           <Feather name="more-vertical" size={24} color="white" />
         </View>
       ),}} />
+      <Stack.Screen name="ChatRoom" component={ChatRoomScreen} options={({ route })=>({ 
+        title: route.params.user,
+        headerRight:()=>(
+        <View style={{flexDirection:'row',width:90,justifyContent:'space-between'}}>
+          <Feather name='video' size={22} color={Colors.light.background}/>
+          <Feather name='phone' size={22} color={Colors.light.background}/>
+          <Feather name='more-vertical' size={22} color={Colors.light.background}/>
+        </View>
+        ) ,
+        })}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
