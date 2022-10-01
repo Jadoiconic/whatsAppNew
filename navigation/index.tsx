@@ -5,7 +5,7 @@
  */
 import { Entypo, Feather, FontAwesome, FontAwesome5, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'; 
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import { Button, ColorSchemeName, Image,View,Text, Touchable, TouchableOpacity } from 'react-native';
@@ -38,6 +38,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   const [moon,setMoon] = React.useState(true);
   const [offline,setOffline] = React.useState(false)
+  const navigation = useNavigation()
   return (
     <Stack.Navigator screenOptions={{
       headerStyle:{
@@ -74,6 +75,14 @@ function RootNavigator() {
           <Feather name='more-vertical' size={22} color={Colors.light.background}/>
         </View>
         ) ,
+        headerLeft:()=>(
+          <TouchableOpacity onPress={()=> navigation.goBack()}>
+            <View style={{padding:0,marginRight:5,marginLeft:-5,flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
+              <FontAwesome5 name="arrow-left" size={20} color={Colors.light.background}/>
+              <Image source={{uri:route.params.img}} style={{width:40,height:40,borderRadius:100,backgroundColor:'red'}}/>
+            </View>
+          </TouchableOpacity>
+        ),
         })}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>

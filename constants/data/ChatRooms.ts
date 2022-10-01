@@ -87,7 +87,7 @@ export default [{
   }, {
     id: 'u7',
     name: 'Alice',
-    imageUri: 'https://unsplash.com/photos/WNoLnJo7tS8',
+    imageUri: 'https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
   }],
   lastMessage: {
     id: 'm6',

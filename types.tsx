@@ -40,7 +40,7 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
 export type users = {
   id:String;
   name:String;
-  imageUrl: String;
+  imageUri: String;
 
 };
 
@@ -48,6 +48,7 @@ export type Message = {
   id: String;
   content: String;
   createdAt: String;
+  user:users;
 };
 
 export type chatRoom = {
