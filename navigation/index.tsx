@@ -21,6 +21,7 @@ import CameraScreen from '../screens/CameraScreen';
 import CallScreen from '../screens/CallScreen';
 import StatusScreen from '../screens/StatusScreen';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
+import ContactScreen from '../screens/ContactScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -84,6 +85,7 @@ function RootNavigator() {
           </TouchableOpacity>
         ),
         })}/>
+      <Stack.Screen name="Contact" component={ContactScreen} options={{ title: 'New Chat' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />

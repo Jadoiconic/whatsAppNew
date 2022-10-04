@@ -6,8 +6,7 @@ import { Text, View } from '../components/Themed';
 export default function StatusScreen() {
   return (
     <View style={styles.container}>
-      <EditScreenInfo />
-      <Text>Status Screen</Text>
+      <Text></Text>
     </View>
   );
 }

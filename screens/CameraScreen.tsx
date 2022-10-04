@@ -7,8 +7,7 @@ import { RootTabScreenProps } from '../types';
 export default function CameraScreen({ navigation }: RootTabScreenProps<'Camera'>) {
   return (
     <View style={styles.container}>
-      <EditScreenInfo />
-      <Text>Camera Screen</Text>
+      <Text></Text>
     </View>
   );
 }

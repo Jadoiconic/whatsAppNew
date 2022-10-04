@@ -20,11 +20,17 @@ const ChatListItem = (props: ChatListItemProps) => {
             img:user.imageUri,
         })
     }
+    const onClickc = () => {
+        alert("Clicked")
+    }
     return (
+        
         <TouchableOpacity onPress={onClick}>
             <View style={styles.container}>
                 <View style={styles.leftContainer}>
+                <TouchableOpacity onPress={onClickc}>
                     <Image source={{uri:user.imageUri}} style={styles.avatar}/>
+                </TouchableOpacity>
                     <View style={styles.midContainer}>
                         <Text style={styles.username}>{user.name}</Text>
                         <Text numberOfLines={1} ellipsizeMode={"tail"} style={styles.lastMessage}>{chatRoom.lastMessage.content}</Text>

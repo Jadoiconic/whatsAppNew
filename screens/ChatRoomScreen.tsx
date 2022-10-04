@@ -17,6 +17,7 @@ const ChatRoomScreen = () => {
         <FlatList 
         data={ChatRoomsData.messages} 
         renderItem={({item})=> (<ChatMessage message={item}/>)}
+        inverted
         />
         <InputComp />
     </ImageBackground>

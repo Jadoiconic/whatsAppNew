@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container:{
         flexDirection:'row',
         margin:10,
-        alignItems:'center',
+        alignItems:'flex-end',
     },
     btn:{
         backgroundColor:'#128755',
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     input:{
         flex:1,
         minHeight:40,
-        maxHeight:100,
+        maxHeight:60,
         marginHorizontal:10,
     },
     icon:{
@@ -25,10 +25,11 @@ const styles = StyleSheet.create({
     mainContainer:{
         flexDirection:'row',
         backgroundColor:'white',
-        padding:10,
+        padding:5,
         alignItems:'center',
-        borderRadius:50,
+        borderRadius:30,
         marginRight:5,
+        marginBottom:5,
         flex:1,
 
     }
